@@ -21,31 +21,31 @@ public class PersonaServices implements BaseService<Persona> {
         try {
             List<Persona> entities = personaRepository.findAll();
             return entities;
-        } catch (Exception e) {
+        } catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
 
     @Override
     @Transactional
-    public Persona findById(Long id) throws Exception {
+    public Persona findById(Long Id) throws Exception {
         try {
-            Optional<Persona> entiteOpcional = personaRepository.findById((id));
-            return  entityOptional.get();
-        } catch (Exception e) {
-            throw new Exception(e.getMessage())
+            Optional<Persona> entityOpcional = personaRepository.findById(Id);
+            return entityOpcional.get();
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
         }
     }
 
     @Override
     @Transactional
     public Persona save(Persona entity) throws Exception {
-      try {
-          entity = personaRepository.save(entity);
-          return entity;
-      } catch (Exception e) {
-          throw new Exception(e.getMessage());
-      }
+        try {
+            entity = personaRepository.save(entity);
+            return entity;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
@@ -56,7 +56,7 @@ public class PersonaServices implements BaseService<Persona> {
             Persona persona = entityOpcional.get();
             persona = personaRepository.save(entity);
             return persona;
-        } catch (Exception e) {
+        } catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
@@ -65,13 +65,13 @@ public class PersonaServices implements BaseService<Persona> {
     @Transactional
     public boolean delete(Long id) throws Exception {
         try {
-            if(personaRepository.existsById(id)){
+            if (personaRepository.existsById(id)){
                 personaRepository.deleteById(id);
-                return true;
+                return  true;
             } else {
                 throw new Exception();
             }
-        } catch (Exception e) {
+        } catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }
