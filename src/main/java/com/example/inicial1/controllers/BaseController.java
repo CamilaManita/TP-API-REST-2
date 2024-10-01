@@ -1,4 +1,4 @@
 package com.example.inicial1.controllers;
 
-public class AutorController {
+public class BaseController {
 }
