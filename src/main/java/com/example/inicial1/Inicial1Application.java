@@ -27,20 +27,23 @@ public class Inicial1Application {
 		System.out.println("funcionando");
 	}
 
+
+
+
 	@Bean
 	@Transactional
 	CommandLineRunner init(PersonaRepository personaRepository) {
 		return args -> {
-	// Creo un objeto persona
-Persona per1 = Persona.builder().
-		nombre("Camila").apellido("Manita").
-		build();
+			// Creo un objeto persona
+			Persona per1 = Persona.builder().
+					nombre("Alberto").apellido("Cortez").
+					build();
 
-Domicilio dom1 = Domicilio.builder().
-		calle("Suipacha").
-		numero(239).build();
+			Domicilio dom1 = Domicilio.builder().
+					calle("Suipacha").
+					numero(239).build();
 
-per1.setDomicilio(dom1);
+			per1.setDomicilio(dom1);
 
 			personaRepository.save(per1);
 
@@ -82,7 +85,7 @@ per1.setDomicilio(dom1);
 
 		};
 
-		};
+	};
 
 
 

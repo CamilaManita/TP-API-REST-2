@@ -1,6 +1,5 @@
 package com.example.inicial1.dtos;
 
-
 import lombok.*;
 
 @AllArgsConstructor
